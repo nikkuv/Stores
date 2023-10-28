@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+/* ... your existing styles ... */
+
+/* button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4285F4;
+  color: white;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: #357ABD;
+} */
