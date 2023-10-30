@@ -2,8 +2,8 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { signInWithGoogle, signOut } from "../../lib/firebase";
-import { auth } from "../../lib/firebase";
+import { signInWithGoogle } from "../lib/firebase";
+import { auth } from "@/lib/firebase";
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -36,7 +36,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      <button className={styles.signInBtn} onClick={() => signInWithGoogle()}>
+        <h1>Welcome to the stores</h1>
+        <button className={styles.signInBtn} onClick={() => signInWithGoogle()}>
             <svg
               width="19"
               height="20"

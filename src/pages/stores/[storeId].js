@@ -1,4 +1,5 @@
-import SingleStore from "../../../components/singleStore/singleStore";
+import SingleStore from "@/components/storeDetails/storeDetails";
+import withAuth from "@/hoc/withAuth";
 
 async function fetchSingleStoreById(storeId) {
   const response = await fetch(
@@ -46,4 +47,4 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default StorePage;
+export default withAuth(StorePage);

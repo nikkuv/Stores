@@ -1,0 +1,24 @@
+.storeTimingsDropdown {
+  border: 1px solid #ddd;
+  width: 200px;
+}
+
+.dropDownBtn {
+  background-color: #f7f7f7;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.timingsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #ddd;
+}
+
+.timingsList li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
