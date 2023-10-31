@@ -1,7 +1,5 @@
 import Store from "@/components/store/StoreComponent";
-import { signOut } from "@/lib/firebase";
-import { useRouter } from "next/router";
-import styles from "@/styles/stores.module.css";
+import styles from "@/styles/Stores.module.css";
 import withAuth from "@/hoc/withAuth";
 import { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -20,14 +18,6 @@ export async function getStaticProps() {
 function Stores({ stores }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredStores, setFilteredStores] = useState(stores);
-
-  const router = useRouter();
-
-  function handleSignOut() {
-    signOut().then(() => {
-      router.push("/");
-    });
-  }
 
   useEffect(() => {
     if (searchTerm) {
@@ -53,9 +43,8 @@ function Stores({ stores }) {
           />
           <AiOutlineSearch className={styles.searchIcon} />
         </div>
-        <div>
+        <div className={styles.btnContainer}>
           <button className={styles.appointmentBtn}>Book an appointment</button>
-          <button className={styles.signOut} onClick={handleSignOut}>Sign Out</button>
         </div>
       </header>
       {filteredStores.map((store, index) => (

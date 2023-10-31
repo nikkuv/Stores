@@ -1,17 +1,22 @@
 .store {
   min-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s, transform 0.5s;
+  will-change: opacity, transform;
+  margin: 0 1rem;
 }
 
 .storeDetails {
-  padding: 6rem;
+  padding: 6rem 0rem;
   display: flex;
   align-items: center;
   gap: 10px;
   flex: 1 0 0;
-  align-self: stretch;
 }
 
 .storeContent {
@@ -27,7 +32,7 @@
 .storeName {
   color: #000;
   font-family: Inter;
-  font-size: 24px;
+  font-size: 16px;
   font-style: italic;
   font-weight: 400;
   line-height: normal;
@@ -54,3 +59,46 @@
   text-decoration-line: underline;
   display: block;
 }
+
+.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imgContainer {
+  width: 100%;
+}
+
+.imgContainer img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .store {
+    justify-content: space-around; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .store {
+    justify-content: space-between; 
+    flex-wrap: nowrap; 
+  }
+
+  .storeDetails {
+    padding: 0 6rem;
+  }
+
+  .imgContainer {
+    width: 40%;
+  }
+  
+  .imgContainer img {
+    width: 40%;
+  }
+
+  .storeName {
+    font-size: 24px;
+  }
+}
+

@@ -1,4 +1,5 @@
 .singleStore {
+  min-height: 100vh;
   margin: 0 auto;
   max-width: 1240px;
 }
@@ -8,6 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 1rem;
 }
 
 .header {
@@ -15,6 +18,8 @@
   align-items: center;
   justify-content: space-between;
   height: 10vh;
+  margin: 1rem;
+  flex-wrap: wrap;
 }
 
 .back {
@@ -45,15 +50,21 @@
 }
 
 .storeWrapper {
-  font-family: "Arial", sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2rem 0;
 }
 
 .storeHeading {
-  font-size: 36px;
-  margin-bottom: 16px;
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .detailsSection {
@@ -63,12 +74,82 @@
 }
 
 .subHeading {
-  font-size: 24px;
-  margin-bottom: 16px;
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.discription {
-  margin-bottom: 8px;
+.description {
+  color: #000;
+  font-family: Inter;
   font-size: 16px;
-  color: #555;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.storeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.subHeadingSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.contact {
+  color: #000;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.contactWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dropdown {
+  margin-top: 20px;
+}
+
+.imgContainer {
+  width: 100%;
+}
+
+.imgContainer img {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .singleStoreDetails {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .imgContainer {
+    width: 40%;
+  }
+
+  .imgContainer img {
+    width: 40%;
+  }
+
+  .storeWrapper {
+    padding: 74px 0px 74px 74px;
+  }
 }
