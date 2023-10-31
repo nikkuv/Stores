@@ -25,7 +25,6 @@ export async function fetchAllStoreIds() {
   }
   const stores = await response.json();
 
-  // Extract just the IDs and return them
   const ids = stores.map((store) => store._id.toString());
   return ids;
 }

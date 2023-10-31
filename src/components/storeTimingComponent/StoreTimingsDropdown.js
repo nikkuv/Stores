@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import styles from './StoreTimingDropdown.module.css';
+import styles from "./StoreTimingDropdown.module.css";
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
 const StoreTimingsDropdown = ({ timings }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +14,14 @@ const StoreTimingsDropdown = ({ timings }) => {
     "saturday",
   ];
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   const getCurrentDayTiming = () => {
     const currentDate = new Date();
     const currentDay = days[currentDate.getDay()];
-    const currentTime = currentDate.getHours() + currentDate.getMinutes() / 60; 
+    const currentTime = currentDate.getHours() + currentDate.getMinutes() / 60;
 
     const todayTiming = timings[currentDay];
     if (todayTiming.closed) {
@@ -53,14 +58,20 @@ const StoreTimingsDropdown = ({ timings }) => {
   return (
     <div className={styles.storeTimingsDropdown}>
       <button className={styles.dropDownBtn} onClick={toggleDropdown}>
-        {getCurrentDayTiming()} {isOpen ? "▼" : "▲"}
+        {getCurrentDayTiming()}
+        <span className={styles.iconStyle}>
+          {isOpen ? <AiOutlineUp /> : <AiOutlineDown />}
+        </span>
       </button>
 
       {isOpen && (
         <ul className={styles.timingsList}>
           {days.map((day) => (
             <li key={day}>
-              {day}: {timings[day].open}AM - {timings[day].close}PM
+              <span>{capitalizeFirstLetter(day)}</span>
+              <span>
+                {timings[day].open} AM - {timings[day].close} PM
+              </span>
             </li>
           ))}
         </ul>

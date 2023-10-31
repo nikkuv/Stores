@@ -1,11 +1,74 @@
 .singleStore {
-    margin: 0 auto;
-    max-width: 1240px;
+  margin: 0 auto;
+  max-width: 1240px;
 }
 
 .singleStoreDetails {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backToStoreLink {
+  padding-left: 12px;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.appointmentBtn,
+.signOut {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  padding: 10px 20px;
+  transition: 0.3s;
+  text-decoration: underline;
+}
+
+.storeWrapper {
+  font-family: "Arial", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+.storeHeading {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.detailsSection {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.subHeading {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.discription {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #555;
 }

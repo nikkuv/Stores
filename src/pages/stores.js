@@ -25,7 +25,6 @@ function Stores({ stores }) {
 
   function handleSignOut() {
     signOut().then(() => {
-      // Use the Next.js router to redirect after signing out
       router.push("/");
     });
   }
@@ -41,7 +40,6 @@ function Stores({ stores }) {
     }
   }, [searchTerm, stores]);
 
-  // Render your stores here
   return (
     <div className={styles.storesContainer}>
       <header className={styles.header}>
@@ -56,8 +54,8 @@ function Stores({ stores }) {
           <AiOutlineSearch className={styles.searchIcon} />
         </div>
         <div>
-          <button>Book an appointment</button>
-          <button onClick={handleSignOut}>Sign Out</button>
+          <button className={styles.appointmentBtn}>Book an appointment</button>
+          <button className={styles.signOut} onClick={handleSignOut}>Sign Out</button>
         </div>
       </header>
       {filteredStores.map((store, index) => (

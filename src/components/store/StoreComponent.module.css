@@ -1,11 +1,56 @@
 .store {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .storeDetails {
-    width: 100%;
-    padding: 4rem;
+  padding: 6rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.storeContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.storeName {
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.address {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.contact {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: block;
 }

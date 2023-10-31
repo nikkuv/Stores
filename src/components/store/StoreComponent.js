@@ -4,11 +4,18 @@ import styles from "./StoreComponent.module.css";
 import StoreTimingsDropdown from "../storeTimingComponent/StoreTimingsDropdown";
 
 function highlightText(text, highlight) {
-  const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+  const parts = text.split(new RegExp(`(${highlight})`, "gi"));
   return (
     <span>
       {parts.map((part, i) => (
-        <span key={i} style={part.toLowerCase() === highlight.toLowerCase() ? { backgroundColor: 'yellow' } : {}}>
+        <span
+          key={i}
+          style={
+            part.toLowerCase() === highlight.toLowerCase()
+              ? { backgroundColor: "yellow" }
+              : {}
+          }
+        >
           {part}
         </span>
       ))}
@@ -17,7 +24,6 @@ function highlightText(text, highlight) {
 }
 
 function Store({ storeData, searchTerm }) {
-  // Extract data from the passed in storeData
   const {
     name,
     phone,
@@ -38,17 +44,21 @@ function Store({ storeData, searchTerm }) {
           objectFit="cover"
         />
       </Link>
-      <div className={styles.storeDetails} >
-        <Link href={`/stores/${storeData._id}`}>
-          {searchTerm ? highlightText(name, searchTerm) : name}
-        </Link>
-        <address>
-          {street}, <br />
-          {state}, {country}
-        </address>
-        <a href={`tel:${phone}`}>{phone}</a>
-        <a href={`mailto:${email}`}>{email}</a>
-        <StoreTimingsDropdown timings={timings} />
+      <div className={styles.storeDetails}>
+        <div className={styles.storeContent}>
+          <Link className={styles.storeName} href={`/stores/${storeData._id}`}>
+            {searchTerm ? highlightText(name, searchTerm) : name}
+          </Link>
+          <address className={styles.address}>
+            {street}, <br />
+            {state}, {country}
+          </address>
+          <div>
+            <a className={styles.contact} href={`tel:${phone}`}>{phone}</a>
+            <a className={styles.contact} href={`mailto:${email}`}>{email}</a>
+          </div>
+          <StoreTimingsDropdown timings={timings} />
+        </div>
       </div>
     </div>
   );

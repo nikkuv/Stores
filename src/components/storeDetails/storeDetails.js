@@ -2,21 +2,35 @@ import Link from "next/link";
 import Image from "next/image";
 import StoreTimingsDropdown from "../storeTimingComponent/StoreTimingsDropdown";
 import styles from "./storeDetails.module.css";
-
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useRouter } from "next/router";
+ 
 function SingleStore({ store }) {
   if (!store) {
     return <div>Loading...</div>;
   }
 
+  const router = useRouter();
+
+  function handleSignOut() {
+    signOut().then(() => {
+      router.push("/");
+    });
+  }
+
   return (
     <div className={styles.singleStore}>
-      {/* Header Section */}
-      <header>
-        <Link href="/stores">Back to All store</Link>
-        <button>Book an appointment</button>
+      <header className={styles.header}>
+        <div className={styles.back} >
+          <AiOutlineArrowLeft />
+          <Link className={styles.backToStoreLink} href="/stores">Back to All store</Link>
+        </div>
+        <div>
+          <button className={styles.appointmentBtn}>Book an appointment</button>
+          <button className={styles.signOut} onClick={handleSignOut}>Sign Out</button>
+        </div>
       </header>
 
-      {/* Store Image and Name */}
       <div className={styles.singleStoreDetails}>
         <div>
           <Image
@@ -28,13 +42,12 @@ function SingleStore({ store }) {
           />
         </div>
 
-        <div>
-          <h2>{store.name}</h2>
-          <p>{store.description}</p>
-          <div className="details-section">
-            {/* Contact Details */}
+        <div className={styles.storeWrapper}>
+          <h2 className={styles.storeHeading}>{store.name}</h2>
+          <p className={styles.discription}>{store.description}</p>
+          <div className={styles.detailsSection}>
             <div>
-              <h3>Contact Details</h3>
+              <h3 className={styles.subHeading}>Contact Details</h3>
               <p>{store.address.street}</p>
               <p>
                 {store.address.code}, {store.address.state},{" "}
@@ -44,9 +57,8 @@ function SingleStore({ store }) {
               <p>{store.email}</p>
             </div>
 
-            {/* Store Timings */}
             <div>
-              <h3>Store Timings</h3>
+              <h3 className={styles.subHeading}>Store Timings</h3>
               <div>
                 <StoreTimingsDropdown timings={store.timings} />
               </div>
