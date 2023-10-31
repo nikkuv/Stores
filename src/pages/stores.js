@@ -1,5 +1,5 @@
 import Store from "@/components/store/StoreComponent";
-import styles from "@/styles/Stores.module.css";
+import styles from '@/styles/stores.module.css'
 import withAuth from "@/hoc/withAuth";
 import { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -43,7 +43,7 @@ function Stores({ stores }) {
           />
           <AiOutlineSearch className={styles.searchIcon} />
         </div>
-        <div className={styles.btnContainer}>
+        <div className={styles.btnContainers}>
           <button className={styles.appointmentBtn}>Book an appointment</button>
         </div>
       </header>

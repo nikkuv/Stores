@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import StoreTimingsDropdown from "../storeTimingComponent/StoreTimingsDropdown";
 import { signOut } from "@/lib/firebase";
-import styles from "./StoreDetails.module.css";
+import styles from "@/components/storeDetails/storeDetails.module.css"
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useRouter } from "next/router";
 
