@@ -43,7 +43,7 @@ function Stores({ stores }) {
           />
           <AiOutlineSearch className={styles.searchIcon} />
         </div>
-        <div className={styles.btnContainers}>
+        <div className={styles.btnContainer}>
           <button className={styles.appointmentBtn}>Book an appointment</button>
         </div>
       </header>
